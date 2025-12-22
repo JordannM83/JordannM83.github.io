@@ -1,0 +1,23 @@
+import './Footer.css'
+
+function Footer() {
+  const currentYear = new Date().getFullYear()
+
+  return (
+    <footer className="footer">
+      <div className="footer-container">
+        <p>&copy; {currentYear} JordannM83. Tous droits réservés.</p>
+        <div className="social-links">
+          <a href="https://github.com/JordannM83" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
+export default Footer
