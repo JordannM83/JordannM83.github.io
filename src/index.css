@@ -1,45 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* Couleurs principales */
+  --color-primary: #0F172A;        /* Bleu nuit */
+  --color-accent: #2563EB;         /* Bleu accent */
+  
+  /* Couleurs secondaires */
+  --color-gray-light: #E5E7EB;     /* Gris clair */
+  --color-gray-dark: #374151;      /* Gris foncé */
+  
+  /* Couleur d'accent */
+  --color-success: #22C55E;        /* Vert tech */
+  
+  /* Couleurs de texte */
+  --color-text-primary: #E5E7EB;
+  --color-text-secondary: #9CA3AF;
+  --color-text-dark: #1F2937;
+  
+  /* Couleurs de fond */
+  --color-bg-primary: #020617;     /* Fond dark */
+  --color-bg-secondary: #0F172A;
+  --color-bg-card: rgba(255, 255, 255, 0.05);
+  --color-bg-card-hover: rgba(255, 255, 255, 0.08);
+  
+  /* Typographie */
+  --font-primary: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-code: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  /* Tailles de texte */
+  --font-size-h1: clamp(2.5rem, 5vw, 3rem);    /* 40-48px */
+  --font-size-h2: clamp(1.75rem, 3vw, 2rem);   /* 28-32px */
+  --font-size-h3: clamp(1.25rem, 2vw, 1.375rem); /* 20-22px */
+  --font-size-base: 1rem;                       /* 16px */
+  --font-size-large: 1.125rem;                  /* 18px */
+  
+  /* Espacements */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+  
+  /* Ombres */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 30px rgba(37, 99, 235, 0.2);
+  
+  /* Transitions */
+  --transition-fast: 200ms ease;
+  --transition-base: 300ms ease;
+  
+  /* Layout */
+  --max-width-content: 1200px;
+  
+  font-family: var(--font-primary);
   line-height: 1.5;
   font-weight: 400;
-
+  
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+html, body, #root {
+  width: 100%;
   min-height: 100vh;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  width: 100%;
+}
+
 h1 {
-  font-size: 3.2em;
+  font-size: var(--font-size-h1);
   line-height: 1.1;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: 500;
 }
 
 button {
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: var(--font-size-base);
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--color-bg-secondary);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all var(--transition-base);
 }
 
 button:hover {
-  border-color: #646cff;
+  border-color: var(--color-accent);
 }
 
 button:focus,
@@ -49,23 +130,31 @@ button:focus-visible {
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--color-accent);
   text-decoration: inherit;
+  transition: color var(--transition-base);
 }
 
 a:hover {
-  color: #535bf2;
+  color: #3B82F6;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: var(--color-gray-light);
+    --color-text-primary: var(--color-text-dark);
+    --color-text-secondary: var(--color-gray-dark);
+    --color-bg-card: rgba(0, 0, 0, 0.02);
+    --color-bg-card-hover: rgba(0, 0, 0, 0.05);
+    
+    color: var(--color-text-dark);
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #1D4ED8;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: var(--color-gray-light);
   }
 }
