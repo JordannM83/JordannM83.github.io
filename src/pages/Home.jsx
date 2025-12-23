@@ -5,13 +5,12 @@ function Home() {
     <div className="home">
       <section className="hero">
         <h1>Bienvenue sur mon Portfolio</h1>
-        <p className="subtitle">Développeur passionné par la création d'applications web modernes</p>
+        <p className="subtitle">Étudiant en développement Web & Mobile avec une passion pour la cybersécurité</p>
         <div className="cta-buttons">
           <a href="#projects" className="btn btn-primary">Voir mes projets</a>
           <a href="#contact" className="btn btn-secondary">Me contacter</a>
         </div>
       </section>
-
       <section className="features">
         <div className="feature-card">
           <h3>🚀 React</h3>
