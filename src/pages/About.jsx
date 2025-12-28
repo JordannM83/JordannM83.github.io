@@ -1,32 +1,36 @@
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../translations'
 import './About.css'
 
 function About() {
+  const { language } = useLanguage()
+  const t = translations[language]
+
   return (
     <div className="about">
-      <h1>À propos de moi</h1>
+      <h1>{t.about.title}</h1>
       
       <section className="about-section">
-        <h2>Qui suis-je ?</h2>
+        <h2>{t.about.whoAmI}</h2>
         <p>
-          Passionné par le développement web, je crée des applications modernes 
-          et performantes en utilisant les dernières technologies.
+          {t.about.whoAmIDesc}
         </p>
       </section>
 
       <section className="about-section">
-        <h2>Compétences</h2>
+        <h2>{t.about.skills}</h2>
         <div className="skills-grid">
           <div className="skill-item">
-            <h3>Frontend</h3>
+            <h3>{t.about.frontend}</h3>
             <ul>
               <li>React</li>
               <li>JavaScript/ES6+</li>
               <li>HTML5/CSS3</li>
-              <li>Responsive Design</li>
+              <li>{t.about.responsiveDesign}</li>
             </ul>
           </div>
           <div className="skill-item">
-            <h3>Outils</h3>
+            <h3>{t.about.tools}</h3>
             <ul>
               <li>Git/GitHub</li>
               <li>Vite</li>
@@ -35,12 +39,12 @@ function About() {
             </ul>
           </div>
           <div className="skill-item">
-            <h3>Autres</h3>
+            <h3>{t.about.others}</h3>
             <ul>
-              <li>UI/UX Design</li>
-              <li>Agile/Scrum</li>
-              <li>Problem Solving</li>
-              <li>Team Work</li>
+              <li>{t.about.uiUxDesign}</li>
+              <li>{t.about.agile}</li>
+              <li>{t.about.problemSolving}</li>
+              <li>{t.about.teamWork}</li>
             </ul>
           </div>
         </div>

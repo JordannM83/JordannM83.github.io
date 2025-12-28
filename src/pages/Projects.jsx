@@ -1,27 +1,32 @@
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../translations'
 import './Projects.css'
 
 function Projects() {
+  const { language } = useLanguage()
+  const t = translations[language]
+
   const projects = [
     {
       id: 1,
-      title: 'Projet 1',
-      description: 'Description du premier projet',
+      title: t.projects.project1Title,
+      description: t.projects.project1Desc,
       technologies: ['React', 'JavaScript', 'CSS'],
       link: '#',
       github: '#'
     },
     {
       id: 2,
-      title: 'Projet 2',
-      description: 'Description du deuxième projet',
+      title: t.projects.project2Title,
+      description: t.projects.project2Desc,
       technologies: ['React', 'Vite', 'API'],
       link: '#',
       github: '#'
     },
     {
       id: 3,
-      title: 'Projet 3',
-      description: 'Description du troisième projet',
+      title: t.projects.project3Title,
+      description: t.projects.project3Desc,
       technologies: ['React', 'Router', 'Hooks'],
       link: '#',
       github: '#'
@@ -30,7 +35,7 @@ function Projects() {
 
   return (
     <div className="projects">
-      <h1>Mes Projets</h1>
+      <h1>{t.projects.title}</h1>
       
       <div className="projects-grid">
         {projects.map(project => (
@@ -44,10 +49,10 @@ function Projects() {
             </div>
             <div className="project-links">
               <a href={project.link} target="_blank" rel="noopener noreferrer">
-                Voir le projet
+                {t.projects.viewProject}
               </a>
               <a href={project.github} target="_blank" rel="noopener noreferrer">
-                GitHub
+                {t.projects.github}
               </a>
             </div>
           </div>

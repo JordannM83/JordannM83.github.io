@@ -1,28 +1,33 @@
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../translations'
 import './Home.css'
 
 function Home() {
+  const { language } = useLanguage()
+  const t = translations[language]
+
   return (
     <div className="home">
       <section className="hero">
-        <h1>Bienvenue sur mon Portfolio</h1>
-        <p className="subtitle">Étudiant en développement Web & Mobile avec une passion pour la cybersécurité</p>
+        <h1>{t.home.welcome}</h1>
+        <p className="subtitle">{t.home.subtitle}</p>
         <div className="cta-buttons">
-          <a href="#projects" className="btn btn-primary">Voir mes projets</a>
-          <a href="#contact" className="btn btn-secondary">Me contacter</a>
+          <a href="#projects" className="btn btn-primary">{t.home.viewProjects}</a>
+          <a href="#contact" className="btn btn-secondary">{t.home.contactMe}</a>
         </div>
       </section>
       <section className="features">
         <div className="feature-card">
-          <h3>🚀 React</h3>
-          <p>Développement d'interfaces modernes et réactives</p>
+          <h3>{t.home.reactTitle}</h3>
+          <p>{t.home.reactDesc}</p>
         </div>
         <div className="feature-card">
-          <h3>💻 JavaScript</h3>
-          <p>Maîtrise des dernières technologies JS</p>
+          <h3>{t.home.jsTitle}</h3>
+          <p>{t.home.jsDesc}</p>
         </div>
         <div className="feature-card">
-          <h3>🎨 Design</h3>
-          <p>Création d'expériences utilisateur intuitives</p>
+          <h3>{t.home.designTitle}</h3>
+          <p>{t.home.designDesc}</p>
         </div>
       </section>
     </div>

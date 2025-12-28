@@ -29,6 +29,7 @@
 .nav {
   display: flex;
   gap: var(--spacing-lg);
+  align-items: center;
 }
 
 .nav-link {
@@ -56,6 +57,30 @@
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+.language-toggle {
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.language-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+.language-toggle:active {
+  transform: scale(0.98);
 }
 
 @media (max-width: 768px) {
