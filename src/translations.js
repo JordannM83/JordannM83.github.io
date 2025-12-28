@@ -126,7 +126,7 @@ export const translations = {
     // Contact
     contact: {
       title: 'Contact Me',
-      subtitle: 'Let\'s stay in touch',
+      subtitle: 'Keep in touch',
       description: 'Feel free to contact me to discuss your projects or opportunities.',
       name: 'Name',
       email: 'Email',
