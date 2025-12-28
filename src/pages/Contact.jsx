@@ -94,15 +94,15 @@ function Contact() {
           <div className="contact-methods">
             <div className="contact-method">
               <h3>{t.contact.emailLabel}</h3>
-              <a href="mailto:jordann.miso@gmail.com">jordann.miso@gmail.com</a>
+              <a href="mailto:jordann.miso@gmail.com" target="_blank" rel="noopener noreferrer">jordann.miso@gmail.com</a>
             </div>
             <div className="contact-method">
               <h3>{t.contact.linkedinLabel}</h3>
-              <a href="https://www.linkedin.com/in/jordann-miso-64a252255/">Jordann Miso</a>
+              <a href="https://www.linkedin.com/in/jordann-miso-64a252255/" target="_blank" rel="noopener noreferrer">Jordann Miso</a>
             </div>
             <div className="contact-method">
               <h3>{t.contact.githubLabel}</h3>
-              <a href="https://github.com/JordannM83">JordannM83</a>
+              <a href="https://github.com/JordannM83" target="_blank" rel="noopener noreferrer">JordannM83</a>
             </div>
           </div>
         </div>
