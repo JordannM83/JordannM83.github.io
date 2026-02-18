@@ -1,17 +1,27 @@
-import { useLanguage } from '../contexts/LanguageContext'
-import { translations } from '../translations'
-import './Projects.css'
+import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations';
+import './Projects.css';
 
-function Projects() {
-  const { language } = useLanguage()
-  const t = translations[language]
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  technologies: string[];
+  link: string;
+  github: string;
+}
 
-  const projects = [
+const Projects: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  const projects: Project[] = [
     {
       id: 1,
       title: t.projects.project1Title,
       description: t.projects.project1Desc,
-      technologies: ['React', 'JavaScript', 'CSS'],
+      technologies: ['React', 'TypeScript', 'CSS'],
       link: '#',
       github: '#'
     },
@@ -19,7 +29,7 @@ function Projects() {
       id: 2,
       title: t.projects.project2Title,
       description: t.projects.project2Desc,
-      technologies: ['React', 'Vite', 'API'],
+      technologies: ['React', 'Webpack', 'API'],
       link: '#',
       github: '#'
     },
@@ -31,7 +41,7 @@ function Projects() {
       link: '#',
       github: '#'
     }
-  ]
+  ];
 
   return (
     <div className="projects">
@@ -59,7 +69,7 @@ function Projects() {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

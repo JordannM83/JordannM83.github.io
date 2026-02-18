@@ -1,4 +1,85 @@
-export const translations = {
+// Types pour les traductions
+export interface NavTranslations {
+  home: string;
+  about: string;
+  projects: string;
+  contact: string;
+}
+
+export interface HomeTranslations {
+  welcome: string;
+  subtitle: string;
+  viewProjects: string;
+  contactMe: string;
+  reactTitle: string;
+  reactDesc: string;
+  jsTitle: string;
+  jsDesc: string;
+  designTitle: string;
+  designDesc: string;
+}
+
+export interface AboutTranslations {
+  title: string;
+  whoAmI: string;
+  whoAmIDesc: string;
+  skills: string;
+  frontend: string;
+  tools: string;
+  others: string;
+  responsiveDesign: string;
+  uiUxDesign: string;
+  agile: string;
+  problemSolving: string;
+  teamWork: string;
+}
+
+export interface ProjectsTranslations {
+  title: string;
+  project1Title: string;
+  project1Desc: string;
+  project2Title: string;
+  project2Desc: string;
+  project3Title: string;
+  project3Desc: string;
+  viewProject: string;
+  github: string;
+}
+
+export interface ContactTranslations {
+  title: string;
+  subtitle: string;
+  description: string;
+  name: string;
+  email: string;
+  message: string;
+  send: string;
+  emailLabel: string;
+  linkedinLabel: string;
+  githubLabel: string;
+}
+
+export interface FooterTranslations {
+  rights: string;
+}
+
+export interface Translations {
+  nav: NavTranslations;
+  home: HomeTranslations;
+  about: AboutTranslations;
+  projects: ProjectsTranslations;
+  contact: ContactTranslations;
+  footer: FooterTranslations;
+}
+
+export type Language = 'fr' | 'en';
+
+export interface TranslationsData {
+  fr: Translations;
+  en: Translations;
+}
+
+export const translations: TranslationsData = {
   fr: {
     // Header
     nav: {
@@ -142,4 +223,4 @@ export const translations = {
       rights: 'All rights reserved.'
     }
   }
-}
+};

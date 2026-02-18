@@ -1,10 +1,11 @@
-import { useLanguage } from '../contexts/LanguageContext'
-import { translations } from '../translations'
-import './Home.css'
+import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations';
+import './Home.css';
 
-function Home() {
-  const { language } = useLanguage()
-  const t = translations[language]
+const Home: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
 
   return (
     <div className="home">
@@ -31,7 +32,7 @@ function Home() {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

@@ -1,53 +1,73 @@
-import { useState } from 'react'
-import emailjs from '@emailjs/browser'
-import { useLanguage } from '../contexts/LanguageContext'
-import { translations } from '../translations'
-import { EMAILJS_CONFIG } from '../config/emailjs'
-import './Contact.css'
+import React, { useState, ChangeEvent, FormEvent } from 'react';
+import emailjs from '@emailjs/browser';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations';
+import { EMAILJS_CONFIG } from '../config/emailjs';
+import './Contact.css';
 
-function Contact() {
-  const { language } = useLanguage()
-  const t = translations[language]
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
 
-  const [formData, setFormData] = useState({
+interface Status {
+  loading: boolean;
+  message: string;
+  type: 'success' | 'error' | '';
+}
+
+interface TemplateParams {
+  from_name: string;
+  from_email: string;
+  message: string;
+  to_email: string;
+  [key: string]: string;
+}
+
+const Contact: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     message: ''
-  })
+  });
 
-  const [status, setStatus] = useState({
+  const [status, setStatus] = useState<Status>({
     loading: false,
     message: '',
-    type: '' // 'success' ou 'error'
-  })
+    type: ''
+  });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
-    }))
-  }
+    }));
+  };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setStatus({ loading: true, message: '', type: '' })
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault();
+    setStatus({ loading: true, message: '', type: '' });
 
     try {
       // Envoi de l'email via EmailJS
-      const templateParams = {
+      const templateParams: TemplateParams = {
         from_name: formData.name,
         from_email: formData.email,
         message: formData.message,
         to_email: 'jordann.miso@gmail.com'
-      }
+      };
 
       await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
         EMAILJS_CONFIG.TEMPLATE_ID,
         templateParams,
         EMAILJS_CONFIG.PUBLIC_KEY
-      )
+      );
 
       // Succès
       setStatus({
@@ -56,31 +76,31 @@ function Contact() {
           ? 'Message envoyé avec succès ! Je vous répondrai bientôt.' 
           : 'Message sent successfully! I will reply soon.',
         type: 'success'
-      })
+      });
 
       // Réinitialiser le formulaire
       setFormData({
         name: '',
         email: '',
         message: ''
-      })
+      });
 
       // Effacer le message après 5 secondes
       setTimeout(() => {
-        setStatus({ loading: false, message: '', type: '' })
-      }, 5000)
+        setStatus({ loading: false, message: '', type: '' });
+      }, 5000);
 
     } catch (error) {
-      console.error('Erreur lors de l\'envoi:', error)
+      console.error('Erreur lors de l\'envoi:', error);
       setStatus({
         loading: false,
         message: language === 'fr'
           ? 'Erreur lors de l\'envoi du message. Veuillez réessayer ou me contacter directement.'
           : 'Error sending message. Please try again or contact me directly.',
         type: 'error'
-      })
+      });
     }
-  }
+  };
 
   return (
     <div className="contact">
@@ -145,7 +165,7 @@ function Contact() {
             <textarea
               id="message"
               name="message"
-              rows="5"
+              rows={5}
               value={formData.message}
               onChange={handleChange}
               required
@@ -159,7 +179,7 @@ function Contact() {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

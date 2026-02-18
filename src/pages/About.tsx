@@ -1,10 +1,11 @@
-import { useLanguage } from '../contexts/LanguageContext'
-import { translations } from '../translations'
-import './About.css'
+import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations';
+import './About.css';
 
-function About() {
-  const { language } = useLanguage()
-  const t = translations[language]
+const About: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
 
   return (
     <div className="about">
@@ -33,7 +34,7 @@ function About() {
             <h3>{t.about.tools}</h3>
             <ul>
               <li>Git/GitHub</li>
-              <li>Vite</li>
+              <li>Webpack</li>
               <li>npm/yarn</li>
               <li>VS Code</li>
             </ul>
@@ -50,7 +51,7 @@ function About() {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;

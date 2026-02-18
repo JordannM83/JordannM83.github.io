@@ -1,11 +1,12 @@
-import { useLanguage } from '../contexts/LanguageContext'
-import { translations } from '../translations'
-import './Footer.css'
+import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations';
+import './Footer.css';
 
-function Footer() {
-  const { language } = useLanguage()
-  const t = translations[language]
-  const currentYear = new Date().getFullYear()
+const Footer: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="footer">
@@ -23,7 +24,7 @@ function Footer() {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

@@ -1,11 +1,12 @@
-import { Link } from 'react-router-dom'
-import { useLanguage } from '../contexts/LanguageContext'
-import { translations } from '../translations'
-import './Header.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations';
+import './Header.css';
 
-function Header() {
-  const { language, toggleLanguage } = useLanguage()
-  const t = translations[language]
+const Header: React.FC = () => {
+  const { language, toggleLanguage } = useLanguage();
+  const t = translations[language];
 
   return (
     <header className="header">
@@ -24,7 +25,7 @@ function Header() {
         </nav>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
