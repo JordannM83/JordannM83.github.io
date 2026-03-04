@@ -25,7 +25,8 @@ export interface AboutTranslations {
   whoAmIDesc: string;
   skills: string;
   frontend: string;
-  tools: string;
+  backend: string;
+  database: string;
   others: string;
   responsiveDesign: string;
   uiUxDesign: string;
@@ -42,6 +43,10 @@ export interface ProjectsTranslations {
   project2Desc: string;
   project3Title: string;
   project3Desc: string;
+  project4Title: string;
+  project4Desc: string;
+  project5Title: string;
+  project5Desc: string;
   viewProject: string;
   github: string;
 }
@@ -95,12 +100,12 @@ export const translations: TranslationsData = {
       subtitle: 'Étudiant en développement Web & Mobile avec une passion pour la cybersécurité',
       viewProjects: 'Voir mes projets',
       contactMe: 'Me contacter',
-      reactTitle: '🚀 React',
-      reactDesc: 'Développement d\'interfaces modernes et réactives',
-      jsTitle: '💻 JavaScript',
-      jsDesc: 'Maîtrise des dernières technologies JS',
-      designTitle: '🎨 Design',
-      designDesc: 'Création d\'expériences utilisateur intuitives'
+      reactTitle: '🚀 Full Stack & Backend',
+      reactDesc: 'Développement complet d\'applications et architecture serveur',
+      jsTitle: '🔒 Cybersécurité',
+      jsDesc: 'Sécurité des systèmes et protection des données',
+      designTitle: '🎨 Graphisme',
+      designDesc: 'Création visuelle et design graphique'
     },
     
     // About
@@ -110,7 +115,8 @@ export const translations: TranslationsData = {
       whoAmIDesc: 'Passionné par le développement web, je crée des applications modernes et performantes en utilisant les dernières technologies.',
       skills: 'Compétences',
       frontend: 'Frontend',
-      tools: 'Outils',
+      backend: 'Backend',
+      database: 'Base de données',
       others: 'Autres',
       responsiveDesign: 'Responsive Design',
       uiUxDesign: 'UI/UX Design',
@@ -122,12 +128,16 @@ export const translations: TranslationsData = {
     // Projects
     projects: {
       title: 'Mes Projets',
-      project1Title: 'Projet 1',
-      project1Desc: 'Description du premier projet',
-      project2Title: 'Projet 2',
-      project2Desc: 'Description du deuxième projet',
-      project3Title: 'Projet 3',
-      project3Desc: 'Description du troisième projet',
+      project1Title: '🧠 Holbies Learning Hub',
+      project1Desc: 'Système de quiz interactif pour l\'apprentissage technique. Développé avec FastAPI et PostgreSQL, il inclut un système de correction IA avancé pour les questions à réponse libre. Interface immersive avec dashboard de performance.',
+      project2Title: '📱 Mnesya',
+      project2Desc: 'Application mobile de rappel pour les personnes âgées et leurs aidants. Développée avec React Native et FastAPI, elle offre une interface ultra-simple avec gros boutons, notifications intelligentes et système de couplage sécurisé.',
+      project3Title: '🏠 HBnB - Holberton Project',
+      project3Desc: 'Application de location d\'hébergements développée dans le cadre du cursus Holberton School. Implémente une application web complète avec API REST, authentification JWT, ORM SQLAlchemy et frontend interactif.',
+      project4Title: '🎃 404 Souls Not Found',
+      project4Desc: 'Escape game d\'Halloween sur le thème de la programmation. Jeu interactif avec 6 énigmes (Python, SQL, Cybersécurité), système de screamer, tableau des scores et interface effrayante avec effets sonores.',
+      project5Title: '🔧 Simple Shell',
+      project5Desc: 'Interpréteur de commandes Unix développé en C reproduisant les fonctionnalités de /bin/sh. Shell minimal avec exécution de commandes, gestion du PATH, variables d\'environnement et commandes intégrées.',
       viewProject: 'Voir le projet',
       github: 'GitHub'
     },
@@ -167,12 +177,12 @@ export const translations: TranslationsData = {
       subtitle: 'Web & Mobile Development Student with a passion for cybersecurity',
       viewProjects: 'View my projects',
       contactMe: 'Contact me',
-      reactTitle: '🚀 React',
-      reactDesc: 'Building modern and responsive interfaces',
-      jsTitle: '💻 JavaScript',
-      jsDesc: 'Mastering the latest JS technologies',
-      designTitle: '🎨 Design',
-      designDesc: 'Creating intuitive user experiences'
+      reactTitle: '🚀 Full Stack & Backend',
+      reactDesc: 'Full-stack development and server architecture',
+      jsTitle: '🔒 Cybersecurity',
+      jsDesc: 'Systems security and data protection',
+      designTitle: '🎨 Graphic Design',
+      designDesc: 'Visual creation and graphic design'
     },
     
     // About
@@ -182,7 +192,8 @@ export const translations: TranslationsData = {
       whoAmIDesc: 'Passionate about web development, I create modern and high-performance applications using the latest technologies.',
       skills: 'Skills',
       frontend: 'Frontend',
-      tools: 'Tools',
+      backend: 'Backend',
+      database: 'Database',
       others: 'Others',
       responsiveDesign: 'Responsive Design',
       uiUxDesign: 'UI/UX Design',
@@ -194,12 +205,16 @@ export const translations: TranslationsData = {
     // Projects
     projects: {
       title: 'My Projects',
-      project1Title: 'Project 1',
-      project1Desc: 'Description of the first project',
-      project2Title: 'Project 2',
-      project2Desc: 'Description of the second project',
-      project3Title: 'Project 3',
-      project3Desc: 'Description of the third project',
+      project1Title: '🧠 Holbies Learning Hub',
+      project1Desc: 'Interactive quiz system for technical learning. Built with FastAPI and PostgreSQL, including an advanced AI correction system for open-ended questions. Immersive interface with performance dashboard.',
+      project2Title: '📱 Mnesya',
+      project2Desc: 'Mobile reminder application for elderly people and their caregivers. Built with React Native and FastAPI, featuring an ultra-simple interface with large buttons, smart notifications, and secure pairing system.',
+      project3Title: '🏠 HBnB - Holberton Project',
+      project3Desc: 'Accommodation rental application developed as part of the Holberton School curriculum. Complete web application with REST API, JWT authentication, SQLAlchemy ORM, and interactive frontend.',
+      project4Title: '🎃 404 Souls Not Found',
+      project4Desc: 'Halloween-themed programming Escape Game. Interactive game with 6 puzzles (Python, SQL, Cybersecurity), screamer system, leaderboard, and spooky interface with sound effects.',
+      project5Title: '🔧 Simple Shell',
+      project5Desc: 'Unix command interpreter developed in C replicating /bin/sh functionality. Minimal shell with command execution, PATH management, environment variables, and built-in commands.',
       viewProject: 'View project',
       github: 'GitHub'
     },

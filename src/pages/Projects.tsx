@@ -21,25 +21,41 @@ const Projects: React.FC = () => {
       id: 1,
       title: t.projects.project1Title,
       description: t.projects.project1Desc,
-      technologies: ['React', 'TypeScript', 'CSS'],
+      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Python', 'FastAPI', 'PostgreSQL'],
       link: '#',
-      github: '#'
+      github: 'https://github.com/JordannM83/hackaton'
     },
     {
       id: 2,
       title: t.projects.project2Title,
       description: t.projects.project2Desc,
-      technologies: ['React', 'Webpack', 'API'],
+      technologies: ['React Native', 'TypeScript', 'Python', 'FastAPI', 'PostgreSQL'],
       link: '#',
-      github: '#'
+      github: 'https://github.com/krapaud/mnesya'
     },
     {
       id: 3,
       title: t.projects.project3Title,
       description: t.projects.project3Desc,
-      technologies: ['React', 'Router', 'Hooks'],
+      technologies: ['Python', 'Flask', 'SQLAlchemy', 'JWT', 'HTML5', 'CSS3', 'JavaScript'],
       link: '#',
-      github: '#'
+      github: 'https://github.com/JordannM83/holbertonschool-hbnb'
+    },
+    {
+      id: 4,
+      title: t.projects.project4Title,
+      description: t.projects.project4Desc,
+      technologies: ['Python', 'Flask', 'JavaScript', 'HTML5', 'CSS3', 'SQLite', 'Docker'],
+      link: '#',
+      github: 'https://github.com/krapaud/hackaton-syntax-horror'
+    },
+    {
+      id: 5,
+      title: t.projects.project5Title,
+      description: t.projects.project5Desc,
+      technologies: ['C', 'Unix', 'Shell', 'System Programming'],
+      link: '#',
+      github: 'https://github.com/JordannM83/holbertonschool-simple_shell'
     }
   ];
 
@@ -58,9 +74,6 @@ const Projects: React.FC = () => {
               ))}
             </div>
             <div className="project-links">
-              <a href={project.link} target="_blank" rel="noopener noreferrer">
-                {t.projects.viewProject}
-              </a>
               <a href={project.github} target="_blank" rel="noopener noreferrer">
                 {t.projects.github}
               </a>
