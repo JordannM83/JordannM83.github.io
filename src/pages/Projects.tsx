@@ -10,6 +10,7 @@ interface Project {
   technologies: string[];
   link: string;
   github: string;
+  githubLabel?: string;
 }
 
 const Projects: React.FC = () => {
@@ -31,7 +32,8 @@ const Projects: React.FC = () => {
       description: t.projects.project2Desc,
       technologies: ['React Native', 'TypeScript', 'Python', 'FastAPI', 'PostgreSQL'],
       link: '#',
-      github: 'https://github.com/krapaud/mnesya'
+      github: 'https://www.mnesya.app',
+      githubLabel: t.projects.viewProject
     },
     {
       id: 3,
@@ -75,7 +77,7 @@ const Projects: React.FC = () => {
             </div>
             <div className="project-links">
               <a href={project.github} target="_blank" rel="noopener noreferrer">
-                {t.projects.github}
+                {project.githubLabel || t.projects.github}
               </a>
             </div>
           </div>
