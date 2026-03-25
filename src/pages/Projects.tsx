@@ -36,28 +36,12 @@ const Projects: React.FC = () => {
       githubLabel: t.projects.viewProject
     },
     {
-      id: 3,
-      title: t.projects.project3Title,
-      description: t.projects.project3Desc,
-      technologies: ['Python', 'Flask', 'SQLAlchemy', 'JWT', 'HTML5', 'CSS3', 'JavaScript'],
-      link: '#',
-      github: 'https://github.com/JordannM83/holbertonschool-hbnb'
-    },
-    {
       id: 4,
       title: t.projects.project4Title,
       description: t.projects.project4Desc,
       technologies: ['Python', 'Flask', 'JavaScript', 'HTML5', 'CSS3', 'SQLite', 'Docker'],
       link: '#',
       github: 'https://github.com/krapaud/hackaton-syntax-horror'
-    },
-    {
-      id: 5,
-      title: t.projects.project5Title,
-      description: t.projects.project5Desc,
-      technologies: ['C', 'Unix', 'Shell', 'System Programming'],
-      link: '#',
-      github: 'https://github.com/JordannM83/holbertonschool-simple_shell'
     }
   ];
 
