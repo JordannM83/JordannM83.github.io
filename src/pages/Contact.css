@@ -5,7 +5,8 @@
 .contact h1 {
   text-align: center;
   margin-bottom: var(--spacing-xl);
-  color: var(--color-accent);
+  color: var(--color-text-primary);
+  text-transform: uppercase;
 }
 
 .contact-container {
@@ -18,7 +19,7 @@
 
 .contact-info h2 {
   margin-bottom: var(--spacing-sm);
-  color: var(--color-text-primary);
+  color: var(--color-accent);
 }
 
 .contact-info p {
@@ -37,7 +38,7 @@
   background-color: var(--color-bg-card);
   padding: var(--spacing-md);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-line);
   transition: transform var(--transition-fast), background-color var(--transition-fast);
 }
 
@@ -62,7 +63,7 @@
   background-color: var(--color-bg-card);
   padding: var(--spacing-lg);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-line);
 }
 
 .form-group {
@@ -81,7 +82,7 @@
   width: 100%;
   padding: 0.8rem;
   background-color: var(--color-bg-secondary);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   color: var(--color-text-primary);
   font-family: inherit;
@@ -103,8 +104,8 @@
 .submit-btn {
   width: 100%;
   padding: var(--spacing-sm);
-  background-color: var(--color-accent);
-  color: white;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
   border: none;
   border-radius: var(--radius-md);
   font-size: var(--font-size-base);
@@ -114,7 +115,7 @@
 }
 
 .submit-btn:hover:not(:disabled) {
-  background-color: #1D4ED8;
+  background-color: var(--color-accent-strong);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }

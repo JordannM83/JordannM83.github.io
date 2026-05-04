@@ -18,6 +18,17 @@ const About: React.FC = () => {
         </p>
       </section>
 
+      <section className="about-highlights">
+        <article className="about-highlight">
+          <h2>{t.about.journeyTitle}</h2>
+          <p>{t.about.journeyDesc}</p>
+        </article>
+        <article className="about-highlight">
+          <h2>{t.about.workTitle}</h2>
+          <p>{t.about.workDesc}</p>
+        </article>
+      </section>
+
       <section className="about-section">
         <h2>{t.about.skills}</h2>
         <div className="skills-grid">
@@ -25,6 +36,7 @@ const About: React.FC = () => {
             <h3>{t.about.frontend}</h3>
             <ul>
               <li>React</li>
+              <li>TypeScript</li>
               <li>JavaScript ES6+</li>
               <li>HTML5</li>
               <li>CSS3</li>
@@ -36,6 +48,7 @@ const About: React.FC = () => {
             <ul>
               <li>Python</li>
               <li>Node.js</li>
+              <li>NestJS</li>
               <li>Flask</li>
               <li>FastAPI</li>
               <li>C</li>

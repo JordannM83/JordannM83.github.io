@@ -1,10 +1,12 @@
 .header {
   background-color: var(--color-bg-secondary);
   padding: var(--spacing-sm) var(--spacing-lg);
+  border-bottom: 1px solid var(--color-line);
   box-shadow: var(--shadow-md);
   position: sticky;
   top: 0;
   z-index: 100;
+  backdrop-filter: blur(18px);
 }
 
 .header-container {
@@ -17,13 +19,40 @@
 
 .logo {
   text-decoration: none;
-  color: var(--color-accent);
+  color: var(--color-text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.logo h1 {
+.logo-mark {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(215, 181, 109, 0.28));
+}
+
+.logo-name {
   font-size: var(--font-size-h3);
   margin: 0;
-  font-weight: 600;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.logo-company {
+  color: var(--color-accent);
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 .nav {
@@ -60,9 +89,9 @@
 }
 
 .language-toggle {
-  background-color: var(--color-accent);
-  color: white;
-  border: none;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  border: 1px solid var(--color-accent);
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 14px;
@@ -75,7 +104,7 @@
 }
 
 .language-toggle:hover {
-  transform: scale(1.05);
+  transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
 

@@ -11,7 +11,10 @@ const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <p>&copy; {currentYear} JordannM83. {t.footer.rights}</p>
+        <div className="footer-brand">
+          <img src="/images/inked-code-logo.svg" alt="Jordann Miso" className="footer-logo" />
+          <p>&copy; {currentYear} Jordann Miso · Inked Code. {t.footer.rights}</p>
+        </div>
         <div className="social-links">
           <a href="https://github.com/JordannM83" target="_blank" rel="noopener noreferrer">
             <img src="/images/github_logo.png" alt="GitHub" className="social-icon" />

@@ -5,7 +5,45 @@
 .projects h1 {
   text-align: center;
   margin-bottom: var(--spacing-xl);
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+}
+
+.project-category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  justify-content: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.category-tab {
+  background-color: rgba(215, 181, 109, 0.08);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-full);
+  color: var(--color-text-secondary);
+  font-weight: 700;
+  padding: 0.45rem 0.9rem;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.category-tab:hover,
+.category-tab.active {
+  background-color: var(--color-paper);
+  border-color: var(--color-accent);
+  color: var(--color-ink);
+}
+
+.project-category-list {
+  display: grid;
+  gap: var(--spacing-xl);
+}
+
+.project-category-section h2 {
   color: var(--color-accent);
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
 }
 
 .projects-grid {
@@ -14,22 +52,35 @@
   gap: var(--spacing-lg);
 }
 
+.empty-project-category {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-secondary);
+  padding: var(--spacing-lg);
+}
+
 .project-card {
   background-color: var(--color-bg-card);
+  color: inherit;
+  display: block;
   padding: var(--spacing-lg);
   border-radius: var(--radius-lg);
+  text-decoration: none;
   transition: transform var(--transition-base), box-shadow var(--transition-base);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-line);
 }
 
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
+  color: inherit;
 }
 
 .project-card h3 {
   margin-bottom: var(--spacing-sm);
-  color: var(--color-text-primary);
+  color: var(--color-accent);
+  text-transform: uppercase;
 }
 
 .project-card p {
@@ -46,8 +97,9 @@
 }
 
 .tech-tag {
-  background-color: var(--color-accent);
-  color: white;
+  background-color: rgba(215, 181, 109, 0.12);
+  color: var(--color-accent-strong);
+  border: 1px solid var(--color-line-strong);
   padding: 0.3rem 0.8rem;
   border-radius: var(--radius-full);
   font-size: 0.85rem;
@@ -56,24 +108,7 @@
 }
 
 .tech-tag:hover {
-  background-color: #1D4ED8;
-}
-
-.project-links {
-  display: flex;
-  gap: var(--spacing-sm);
-}
-
-.project-links a {
-  color: var(--color-accent);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color var(--transition-base);
-}
-
-.project-links a:hover {
-  color: #3B82F6;
-  text-decoration: underline;
+  background-color: rgba(215, 181, 109, 0.22);
 }
 
 @media (max-width: 768px) {

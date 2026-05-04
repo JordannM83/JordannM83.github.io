@@ -10,6 +10,9 @@ const Home: React.FC = () => {
   return (
     <div className="home">
       <section className="hero">
+        <img src="/images/inked-code-logo.svg" alt="Jordann Miso" className="hero-logo" />
+        <p className="brand-kicker">Jordann Miso</p>
+        <p className="company-name">Inked Code</p>
         <h1>{t.home.welcome}</h1>
         <p className="subtitle">{t.home.subtitle}</p>
         <div className="cta-buttons">
