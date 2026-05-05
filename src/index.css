@@ -16,10 +16,10 @@
   --color-text-primary: #F8F1E4;
   --color-text-secondary: #B9AD99;
   --color-text-dark: #15110E;
-  --color-bg-primary: #070605;
-  --color-bg-secondary: rgba(18, 15, 13, 0.92);
-  --color-bg-card: rgba(243, 233, 210, 0.065);
-  --color-bg-card-hover: rgba(243, 233, 210, 0.105);
+  --color-bg-primary: #100E0B;
+  --color-bg-secondary: rgba(28, 24, 20, 0.92);
+  --color-bg-card: rgba(243, 233, 210, 0.085);
+  --color-bg-card-hover: rgba(243, 233, 210, 0.13);
   
   /* Typographie */
   --font-primary: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -84,8 +84,8 @@ body {
   min-height: 100vh;
   width: 100%;
   background:
-    linear-gradient(rgba(243, 233, 210, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(243, 233, 210, 0.018) 1px, transparent 1px),
+    linear-gradient(rgba(243, 233, 210, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243, 233, 210, 0.026) 1px, transparent 1px),
     var(--color-bg-primary);
   background-size: 42px 42px, 42px 42px, auto;
 }

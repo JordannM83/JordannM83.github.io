@@ -123,14 +123,14 @@ export const translations: TranslationsData = {
     
     // Home
     home: {
-      welcome: 'Développement web, mobile et cybersécurité',
-      subtitle: 'Des interfaces nettes, du code solide et une identité visuelle marquée.',
+      welcome: 'Développement web et mobile',
+      subtitle: 'Des solutions digitales où développement sur mesure et identité graphique travaillent ensemble.',
       viewProjects: 'Voir mes projets',
       contactMe: 'Me contacter',
       reactTitle: 'Full Stack & Backend',
       reactDesc: 'Développement complet d\'applications et architecture serveur',
-      jsTitle: 'Cybersécurité',
-      jsDesc: 'Sécurité des systèmes et protection des données',
+      jsTitle: 'Applications mobiles',
+      jsDesc: 'Développement d\'applications mobiles modernes et performantes',
       designTitle: 'Graphisme',
       designDesc: 'Création visuelle et design graphique'
     },
@@ -226,14 +226,14 @@ export const translations: TranslationsData = {
     
     // Home
     home: {
-      welcome: 'Web, mobile and cybersecurity development',
-      subtitle: 'Sharp interfaces, solid code, and a marked visual identity.',
+      welcome: 'Web and mobile development',
+      subtitle: 'Digital solutions where custom development and graphic identity work together.',
       viewProjects: 'View my projects',
       contactMe: 'Contact me',
       reactTitle: 'Full Stack & Backend',
       reactDesc: 'Full-stack development and server architecture',
-      jsTitle: 'Cybersecurity',
-      jsDesc: 'Systems security and data protection',
+      jsTitle: 'Mobile Apps',
+      jsDesc: 'Modern, performant mobile application development',
       designTitle: 'Graphic Design',
       designDesc: 'Visual creation and graphic design'
     },
