@@ -127,12 +127,12 @@ export const translations: TranslationsData = {
       subtitle: 'Des solutions digitales où développement sur mesure et identité graphique travaillent ensemble.',
       viewProjects: 'Voir mes projets',
       contactMe: 'Me contacter',
-      reactTitle: 'Full Stack & Backend',
+      reactTitle: 'Application web et web mobile',
       reactDesc: 'Développement complet d\'applications et architecture serveur',
-      jsTitle: 'Applications mobiles',
-      jsDesc: 'Développement d\'applications mobiles modernes et performantes',
+      jsTitle: 'Site vitrine',
+      jsDesc: 'Création de sites vitrines professionnels, modernes et adaptés à tous les écrans',
       designTitle: 'Graphisme',
-      designDesc: 'Création visuelle et design graphique'
+      designDesc: 'Logo vectorisé, création identité visuelle, charte graphique et design commercial'
     },
     
     // About
@@ -230,12 +230,12 @@ export const translations: TranslationsData = {
       subtitle: 'Digital solutions where custom development and graphic identity work together.',
       viewProjects: 'View my projects',
       contactMe: 'Contact me',
-      reactTitle: 'Full Stack & Backend',
-      reactDesc: 'Full-stack development and server architecture',
-      jsTitle: 'Mobile Apps',
-      jsDesc: 'Modern, performant mobile application development',
+      reactTitle: 'Web and mobile web application',
+      reactDesc: 'Complete application development and server architecture',
+      jsTitle: 'Showcase website',
+      jsDesc: 'Creation of professional, modern showcase websites adapted to every screen',
       designTitle: 'Graphic Design',
-      designDesc: 'Visual creation and graphic design'
+      designDesc: 'Vector logo, brand guidelines, and commercial design'
     },
     
     // About
