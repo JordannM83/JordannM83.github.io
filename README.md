@@ -45,9 +45,6 @@ npm start
 
 # Créer la version de production
 npm run build
-
-# Déployer sur GitHub Pages
-npm run deploy
 ```
 
 ## Fonctionnalités
@@ -75,4 +72,3 @@ Pour configurer l'envoi d'emails :
 ## Licence
 
 Ce projet est un portfolio personnel.
-

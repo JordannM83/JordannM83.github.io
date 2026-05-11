@@ -40,18 +40,6 @@ git push origin main
 
 3. Le déploiement se fera automatiquement à chaque push
 
-### Option 2: Déploiement manuel
-
-Si vous préférez déployer manuellement:
-
-```bash
-npm run deploy
-```
-
-Cette commande va:
-- Construire le projet (`npm run build`)
-- Déployer le dossier `dist` sur la branche `gh-pages`
-
 ## Configuration du repository GitHub
 
 ### Paramètres GitHub Pages
@@ -107,7 +95,6 @@ JordannM83.github.io/
 - `npm run dev` - Lance le serveur de développement
 - `npm run build` - Construit le projet pour la production
 - `npm run preview` - Prévisualise le build de production
-- `npm run deploy` - Déploie sur GitHub Pages
 
 ## Résolution de problèmes
 
@@ -147,7 +134,7 @@ Vérifiez que le `base` dans `vite.config.js` est correctement configuré:
 Pour mettre à jour votre site:
 1. Modifiez vos fichiers
 2. Commitez les changements
-3. Poussez sur GitHub (déploiement automatique) OU exécutez `npm run deploy`
+3. Poussez sur GitHub pour déclencher le déploiement automatique
 
 ## Support
 
