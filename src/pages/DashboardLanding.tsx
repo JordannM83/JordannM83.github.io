@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
+import Reveal from '../components/Reveal';
 import './DashboardLanding.css';
 
 const DashboardLanding: React.FC = () => {
@@ -159,7 +160,7 @@ const DashboardLanding: React.FC = () => {
   return (
     <div className="dashboard-landing">
       <section className="dashboard-hero">
-        <div className="dashboard-hero-copy">
+        <Reveal className="dashboard-hero-copy" direction="left">
           <p className="dashboard-kicker">{content.kicker}</p>
           <h1>{content.title}</h1>
           <p>{content.intro}</p>
@@ -176,9 +177,9 @@ const DashboardLanding: React.FC = () => {
               {content.back}
             </Link>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="crm-browser crm-browser-main" aria-label={content.screenLabel}>
+        <Reveal className="crm-browser crm-browser-main" direction="right" delay={160} aria-label={content.screenLabel}>
           <div className="crm-window-bar">
             <span />
             <span />
@@ -226,17 +227,17 @@ const DashboardLanding: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="crm-screens">
-        <div className="section-heading">
+        <Reveal className="section-heading">
           <p className="dashboard-kicker">{content.screenLabel}</p>
           <h2>{content.interfaceTitle}</h2>
-        </div>
+        </Reveal>
 
         {content.screens.map((screen, index) => (
-          <article className="screen-card" key={screen.title}>
+          <Reveal as="article" className="screen-card" delay={(index % 4) * 90} key={screen.title}>
             <div className={`screen-mock screen-mock-${index + 1}`}>
               <div className="mock-header" />
               <div className={index === 2 ? 'pipeline-screen' : 'mock-list'}>
@@ -267,42 +268,42 @@ const DashboardLanding: React.FC = () => {
             </div>
             <h3>{screen.title}</h3>
             <p>{screen.text}</p>
-          </article>
+          </Reveal>
         ))}
       </section>
 
       <section className="dashboard-feature-section">
-        <div className="section-heading">
+        <Reveal className="section-heading">
           <p className="dashboard-kicker">{content.featureTitle}</p>
           <h2>{content.workflowTitle}</h2>
-        </div>
+        </Reveal>
         <div className="dashboard-feature-grid">
-          {content.features.map((feature) => (
-            <article className="dashboard-feature-card" key={feature.title}>
+          {content.features.map((feature, index) => (
+            <Reveal as="article" className="dashboard-feature-card" delay={(index % 4) * 80} key={feature.title}>
               <h3>{feature.title}</h3>
               <p>{feature.text}</p>
-            </article>
+            </Reveal>
           ))}
         </div>
       </section>
 
       <section className="dashboard-process">
-        <div className="dashboard-process-card">
+        <Reveal className="dashboard-process-card" direction="left">
           <h2>{content.workflowTitle}</h2>
           <ol>
             {content.workflow.map((step) => (
               <li key={step}>{step}</li>
             ))}
           </ol>
-        </div>
-        <div className="dashboard-process-card">
+        </Reveal>
+        <Reveal className="dashboard-process-card" direction="right" delay={120}>
           <h2>{content.stackTitle}</h2>
           <div className="dashboard-stack">
             {content.stack.map((item) => (
               <span key={item}>{item}</span>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
     </div>
   );

@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations';
 import { EMAILJS_CONFIG } from '../config/emailjs';
+import Reveal from '../components/Reveal';
 import './Contact.css';
 
 interface FormData {
@@ -104,30 +105,32 @@ const Contact: React.FC = () => {
 
   return (
     <div className="contact">
-      <h1>{t.contact.title}</h1>
+      <Reveal>
+        <h1>{t.contact.title}</h1>
+      </Reveal>
       
       <div className="contact-container">
-        <div className="contact-info">
+        <Reveal className="contact-info" direction="left" delay={100}>
           <h2>{t.contact.subtitle}</h2>
           <p>{t.contact.description}</p>
           
           <div className="contact-methods">
-            <div className="contact-method">
+            <Reveal className="contact-method" delay={0}>
               <h3>{t.contact.emailLabel}</h3>
               <a href="mailto:jordann.miso@gmail.com" target="_blank" rel="noopener noreferrer">jordann.miso@gmail.com</a>
-            </div>
-            <div className="contact-method">
+            </Reveal>
+            <Reveal className="contact-method" delay={100}>
               <h3>{t.contact.linkedinLabel}</h3>
               <a href="https://www.linkedin.com/in/jordann-miso-64a252255/" target="_blank" rel="noopener noreferrer">Jordann Miso</a>
-            </div>
-            <div className="contact-method">
+            </Reveal>
+            <Reveal className="contact-method" delay={200}>
               <h3>{t.contact.githubLabel}</h3>
               <a href="https://github.com/JordannM83" target="_blank" rel="noopener noreferrer">JordannM83</a>
-            </div>
+            </Reveal>
           </div>
-        </div>
+        </Reveal>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <Reveal as="form" className="contact-form" direction="right" delay={180} onSubmit={handleSubmit}>
           {status.message && (
             <div className={`alert alert-${status.type}`}>
               {status.message}
@@ -176,7 +179,7 @@ const Contact: React.FC = () => {
           <button type="submit" className="submit-btn" disabled={status.loading}>
             {status.loading ? (language === 'fr' ? 'Envoi...' : 'Sending...') : t.contact.send}
           </button>
-        </form>
+        </Reveal>
       </div>
     </div>
   );

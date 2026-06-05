@@ -7,13 +7,104 @@
   padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-2xl);
   margin-bottom: var(--spacing-2xl);
   border-bottom: 1px solid var(--color-line);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+}
+
+.hero::before {
+  background:
+    linear-gradient(90deg, transparent, rgba(215, 181, 109, 0.16), transparent),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 34px,
+      rgba(243, 233, 210, 0.05) 35px,
+      transparent 37px
+    );
+  height: 1px;
+  left: 50%;
+  opacity: 0.8;
+  top: 18%;
+  transform: translateX(-50%);
+  width: min(760px, 92vw);
+  animation: heroSignal 4.8s ease-in-out infinite;
+}
+
+.hero::after {
+  border: 1px solid rgba(215, 181, 109, 0.16);
+  border-left: 0;
+  border-right: 0;
+  height: min(340px, 55vw);
+  left: 50%;
+  top: var(--spacing-lg);
+  transform: translateX(-50%);
+  width: min(640px, 86vw);
+  animation: heroFramePulse 5.4s ease-in-out infinite;
+  z-index: -1;
+}
+
+.hero-logo-shell {
+  display: inline-grid;
+  isolation: isolate;
+  margin-bottom: var(--spacing-md);
+  place-items: center;
+  position: relative;
+}
+
+.hero-logo-shell::before,
+.hero-logo-shell::after {
+  content: '';
+  inset: -14%;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+.hero-logo-shell::before {
+  background:
+    conic-gradient(
+      from 0deg,
+      transparent,
+      rgba(215, 181, 109, 0.34),
+      transparent,
+      rgba(243, 233, 210, 0.16),
+      transparent
+    );
+  filter: blur(18px);
+  opacity: 0.5;
+  transform: scale(0.92);
+  animation: logoAuraSpin 10s linear infinite;
+}
+
+.hero-logo-shell::after {
+  background: linear-gradient(105deg, transparent 0 38%, rgba(255, 255, 255, 0.38) 48%, transparent 58% 100%);
+  opacity: 0;
+  transform: translateX(-78%) skewX(-16deg);
+  animation: logoGlint 5.6s ease-in-out infinite;
 }
 
 .hero-logo {
-  width: min(220px, 52vw);
+  width: min(320px, 70vw);
   height: auto;
-  margin-bottom: var(--spacing-md);
-  filter: drop-shadow(0 18px 32px rgba(0, 0, 0, 0.55));
+  filter:
+    drop-shadow(0 22px 38px rgba(0, 0, 0, 0.68))
+    drop-shadow(0 0 18px rgba(215, 181, 109, 0.26));
+  transform-origin: center;
+  animation: logoFloat 5.4s ease-in-out infinite, logoGlow 3.6s ease-in-out infinite;
+  transition: filter var(--transition-base), transform var(--transition-base);
+}
+
+.hero-logo-shell:hover .hero-logo {
+  filter:
+    drop-shadow(0 28px 48px rgba(0, 0, 0, 0.78))
+    drop-shadow(0 0 34px rgba(244, 210, 127, 0.52));
+  transform: scale(1.055) rotate(-1.5deg);
 }
 
 .brand-kicker {
@@ -59,7 +150,25 @@
   border-radius: var(--radius-md);
   text-decoration: none;
   font-weight: 600;
+  position: relative;
+  overflow: hidden;
   transition: all var(--transition-base);
+}
+
+.btn::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  content: '';
+  height: 100%;
+  left: -130%;
+  position: absolute;
+  top: 0;
+  transform: skewX(-18deg);
+  transition: left 620ms ease;
+  width: 75%;
+}
+
+.btn:hover::before {
+  left: 130%;
 }
 
 .btn-primary {
@@ -104,7 +213,7 @@
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px) scale(1.015);
   background-color: var(--color-bg-card-hover);
 }
 
@@ -113,6 +222,76 @@
   margin-bottom: var(--spacing-sm);
   color: var(--color-accent);
   text-transform: uppercase;
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-13px) rotate(-1deg) scale(1.025);
+  }
+}
+
+@keyframes logoGlow {
+  0%,
+  100% {
+    opacity: 0.94;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes logoAuraSpin {
+  from {
+    transform: scale(0.92) rotate(0deg);
+  }
+  to {
+    transform: scale(0.92) rotate(360deg);
+  }
+}
+
+@keyframes logoGlint {
+  0%,
+  28%,
+  100% {
+    opacity: 0;
+    transform: translateX(-78%) skewX(-16deg);
+  }
+  38%,
+  48% {
+    opacity: 0.55;
+  }
+  62% {
+    opacity: 0;
+    transform: translateX(78%) skewX(-16deg);
+  }
+}
+
+@keyframes heroSignal {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: translateX(-50%) scaleX(0.7);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+
+@keyframes heroFramePulse {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: translateX(-50%) scale(0.96);
+  }
+  50% {
+    opacity: 0.48;
+    transform: translateX(-50%) scale(1.02);
+  }
 }
 
 .feature-card p {

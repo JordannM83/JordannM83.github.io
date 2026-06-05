@@ -89,6 +89,7 @@
 }
 
 .crm-browser-main {
+  animation: browserFloat 7s ease-in-out infinite;
   min-height: 430px;
 }
 
@@ -102,10 +103,19 @@
 }
 
 .crm-window-bar span {
+  animation: windowDotPulse 2.4s ease-in-out infinite;
   background-color: var(--color-line-strong);
   border-radius: var(--radius-full);
   height: 0.7rem;
   width: 0.7rem;
+}
+
+.crm-window-bar span:nth-child(2) {
+  animation-delay: 180ms;
+}
+
+.crm-window-bar span:nth-child(3) {
+  animation-delay: 360ms;
 }
 
 .crm-app-frame {
@@ -200,6 +210,27 @@
   background: linear-gradient(180deg, var(--color-accent-strong), rgba(215, 181, 109, 0.16));
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
   flex: 1;
+  transform-origin: bottom;
+}
+
+.is-visible .crm-chart span {
+  animation: chartGrow 850ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.is-visible .crm-chart span:nth-child(2) {
+  animation-delay: 120ms;
+}
+
+.is-visible .crm-chart span:nth-child(3) {
+  animation-delay: 220ms;
+}
+
+.is-visible .crm-chart span:nth-child(4) {
+  animation-delay: 320ms;
+}
+
+.is-visible .crm-chart span:nth-child(5) {
+  animation-delay: 420ms;
 }
 
 .crm-table {
@@ -242,6 +273,15 @@
   border: 1px solid var(--color-line);
   border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
+  transition: transform var(--transition-base), background-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.screen-card:hover,
+.dashboard-feature-card:hover,
+.dashboard-process-card:hover {
+  background-color: var(--color-bg-card-hover);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
 }
 
 .screen-card h3,
@@ -286,6 +326,22 @@
   height: 26px;
 }
 
+.is-visible .mock-list span {
+  animation: listPulse 2.8s ease-in-out infinite;
+}
+
+.is-visible .mock-list span:nth-child(2) {
+  animation-delay: 180ms;
+}
+
+.is-visible .mock-list span:nth-child(3) {
+  animation-delay: 360ms;
+}
+
+.is-visible .mock-list span:nth-child(4) {
+  animation-delay: 540ms;
+}
+
 .pipeline-screen {
   display: grid;
   gap: var(--spacing-sm);
@@ -306,6 +362,10 @@
   background-color: rgba(215, 181, 109, 0.2);
   border-radius: var(--radius-sm);
   height: 42px;
+}
+
+.is-visible .pipeline-column span {
+  animation: cardLift 3.2s ease-in-out infinite;
 }
 
 .tasks-screen {
@@ -362,6 +422,67 @@
   color: var(--color-accent-strong);
   font-weight: 600;
   padding: 0.35rem 0.85rem;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.dashboard-stack span:hover {
+  background-color: rgba(215, 181, 109, 0.22);
+  transform: translateY(-2px);
+}
+
+@keyframes browserFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes chartGrow {
+  from {
+    opacity: 0;
+    transform: scaleY(0.12);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes windowDotPulse {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.16);
+  }
+}
+
+@keyframes listPulse {
+  0%,
+  100% {
+    opacity: 0.78;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(5px);
+  }
+}
+
+@keyframes cardLift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
 }
 
 @media (max-width: 1050px) {

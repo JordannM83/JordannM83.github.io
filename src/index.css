@@ -84,10 +84,43 @@ body {
   min-height: 100vh;
   width: 100%;
   background:
+    linear-gradient(115deg, transparent 0 28%, rgba(215, 181, 109, 0.09) 34%, transparent 42% 100%),
+    linear-gradient(245deg, transparent 0 36%, rgba(243, 233, 210, 0.045) 46%, transparent 56% 100%),
     linear-gradient(rgba(243, 233, 210, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(243, 233, 210, 0.026) 1px, transparent 1px),
     var(--color-bg-primary);
-  background-size: 42px 42px, 42px 42px, auto;
+  background-attachment: fixed;
+  background-size: 180% 180%, 220% 220%, 42px 42px, 42px 42px, auto;
+  animation: backgroundDrift 28s linear infinite;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  inset: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: -1;
+}
+
+body::before {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 78px,
+      rgba(215, 181, 109, 0.045) 80px,
+      transparent 82px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 118px,
+      rgba(243, 233, 210, 0.03) 120px,
+      transparent 122px
+    );
+  mix-blend-mode: screen;
+  opacity: 0.65;
+  transform: translate3d(0, 0, 0);
+  animation: circuitDrift 22s linear infinite;
 }
 
 h1 {
@@ -139,4 +172,75 @@ a {
 
 a:hover {
   color: var(--color-accent-strong);
+}
+
+.reveal.reveal {
+  --reveal-delay: 0ms;
+  --reveal-distance: 28px;
+  opacity: 0;
+  transform: translate3d(0, var(--reveal-distance), 0);
+  filter: blur(8px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay);
+  will-change: opacity, transform, filter;
+}
+
+.reveal.reveal-down {
+  transform: translate3d(0, calc(var(--reveal-distance) * -1), 0);
+}
+
+.reveal.reveal-left {
+  transform: translate3d(calc(var(--reveal-distance) * -1), 0, 0);
+}
+
+.reveal.reveal-right {
+  transform: translate3d(var(--reveal-distance), 0, 0);
+}
+
+.reveal.reveal-scale {
+  transform: scale(0.94);
+}
+
+.reveal.reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+}
+
+@keyframes backgroundDrift {
+  from {
+    background-position: 0 0, 100% 0, 0 0, 0 0, 0 0;
+  }
+  to {
+    background-position: 100% 70%, 0 100%, 42px 42px, -42px 42px, 0 0;
+  }
+}
+
+@keyframes circuitDrift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-82px, 122px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .reveal.reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
 }
