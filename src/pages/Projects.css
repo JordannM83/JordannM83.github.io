@@ -1,8 +1,10 @@
 .projects {
-  padding: var(--spacing-lg);
+  padding: var(--spacing-xl) var(--spacing-lg);
 }
 
 .projects h1 {
+  font-size: clamp(2.8rem, 7vw, 5.8rem);
+  line-height: 0.92;
   text-align: center;
   margin-bottom: var(--spacing-lg);
   color: var(--color-text-primary);
@@ -14,12 +16,16 @@
   flex-wrap: wrap;
   gap: var(--spacing-xs);
   justify-content: center;
+  background: rgba(248, 241, 228, 0.055);
+  border: 1px solid rgba(248, 241, 228, 0.1);
+  border-radius: var(--radius-lg);
   margin-bottom: var(--spacing-xl);
+  padding: 0.45rem;
 }
 
 .category-tab {
-  background-color: rgba(215, 181, 109, 0.08);
-  border: 1px solid var(--color-line);
+  background-color: transparent;
+  border: 1px solid transparent;
   border-radius: var(--radius-full);
   color: var(--color-text-secondary);
   font-weight: 700;
@@ -30,9 +36,9 @@
 
 .category-tab:hover,
 .category-tab.active {
-  background-color: var(--color-paper);
-  border-color: var(--color-accent);
-  color: var(--color-ink);
+  background-color: rgba(37, 184, 172, 0.16);
+  border-color: rgba(37, 184, 172, 0.38);
+  color: var(--color-text-primary);
 }
 
 .project-category-list {
@@ -41,12 +47,13 @@
 }
 
 .project-category-section {
-  border-top: 1px solid var(--color-line);
-  padding-top: var(--spacing-lg);
+  border-top: 1px solid rgba(248, 241, 228, 0.12);
+  padding-top: var(--spacing-xl);
 }
 
 .project-category-section h2 {
-  color: var(--color-accent);
+  color: var(--color-text-primary);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
   margin-bottom: var(--spacing-md);
   text-transform: uppercase;
 }
@@ -67,12 +74,12 @@
 
 .project-card {
   background:
-    linear-gradient(145deg, rgba(243, 233, 210, 0.12), rgba(243, 233, 210, 0.04)),
+    linear-gradient(145deg, rgba(248, 241, 228, 0.12), rgba(248, 241, 228, 0.035)),
     var(--color-bg-card);
   color: inherit;
   display: grid;
-  grid-template-rows: 220px 1fr;
-  min-height: 520px;
+  grid-template-rows: 250px 1fr;
+  min-height: 550px;
   overflow: hidden;
   padding: 0;
   border-radius: var(--radius-lg);
@@ -83,18 +90,19 @@
 }
 
 .project-card:hover {
-  border-color: var(--color-line-strong);
+  border-color: rgba(37, 184, 172, 0.48);
   box-shadow: var(--shadow-lg);
   color: inherit;
-  transform: translateY(-6px);
+  transform: translateY(-9px);
 }
 
 .project-visual {
   background:
-    radial-gradient(circle at 24% 22%, rgba(244, 210, 127, 0.2), transparent 34%),
+    radial-gradient(circle at 24% 22%, rgba(244, 210, 127, 0.22), transparent 34%),
+    radial-gradient(circle at 76% 70%, rgba(37, 184, 172, 0.2), transparent 34%),
     linear-gradient(135deg, rgba(11, 10, 9, 0.34), rgba(215, 181, 109, 0.13));
   border-bottom: 1px solid var(--color-line);
-  min-height: 220px;
+  min-height: 250px;
   overflow: hidden;
   padding: var(--spacing-md);
   position: relative;
@@ -163,14 +171,20 @@
   background-color: rgba(5, 5, 5, 0.72);
   border: 1px solid rgba(243, 233, 210, 0.24);
   border-radius: var(--radius-md);
-  bottom: 24px;
+  bottom: 30px;
   box-shadow: 0 18px 38px rgba(0, 0, 0, 0.44);
   display: grid;
   grid-template-columns: 54px 1fr;
-  height: 132px;
+  height: 148px;
   left: 24px;
   overflow: hidden;
   right: 24px;
+  transform: rotate(-1.5deg);
+  transition: transform var(--transition-base);
+}
+
+.project-card:hover .project-screen-preview {
+  transform: rotate(0deg) scale(1.02);
 }
 
 .project-screen-sidebar {
@@ -214,11 +228,16 @@
   border-radius: 22px;
   bottom: 22px;
   box-shadow: 0 18px 38px rgba(0, 0, 0, 0.44);
-  height: 154px;
+  height: 178px;
   left: 50%;
   padding: 18px 14px;
   transform: translateX(-50%) rotate(-3deg);
-  width: 106px;
+  width: 118px;
+  transition: transform var(--transition-base);
+}
+
+.project-card:hover .project-phone-preview {
+  transform: translateX(-50%) rotate(1deg) scale(1.04);
 }
 
 .project-phone-notch {
@@ -259,7 +278,7 @@
 }
 
 .project-floating-label {
-  background-color: var(--color-paper);
+  background: linear-gradient(135deg, var(--color-paper), var(--color-accent-strong));
   border: 1px solid var(--color-accent);
   border-radius: var(--radius-full);
   bottom: 18px;
@@ -296,7 +315,9 @@
 
 .project-card h3 {
   margin-bottom: var(--spacing-sm);
-  color: var(--color-accent);
+  color: var(--color-text-primary);
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+  line-height: 1.12;
   text-transform: uppercase;
 }
 
@@ -315,9 +336,9 @@
 }
 
 .tech-tag {
-  background-color: rgba(215, 181, 109, 0.12);
-  color: var(--color-accent-strong);
-  border: 1px solid var(--color-line-strong);
+  background-color: rgba(37, 184, 172, 0.1);
+  color: var(--color-text-primary);
+  border: 1px solid rgba(37, 184, 172, 0.28);
   padding: 0.3rem 0.8rem;
   border-radius: var(--radius-full);
   font-size: 0.85rem;

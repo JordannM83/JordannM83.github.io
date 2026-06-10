@@ -10,6 +10,10 @@ export interface NavTranslations {
 export interface HomeTranslations {
   welcome: string;
   subtitle: string;
+  heroLine: string;
+  statWeb: string;
+  statMobile: string;
+  statBrand: string;
   viewProjects: string;
   contactMe: string;
   reactTitle: string;
@@ -123,27 +127,31 @@ export const translations: TranslationsData = {
     
     // Home
     home: {
-      welcome: 'Développement web et mobile',
-      subtitle: 'Des solutions digitales où développement sur mesure et identité graphique travaillent ensemble.',
-      viewProjects: 'Voir mes projets',
-      contactMe: 'Me contacter',
-      reactTitle: 'Application web et web mobile',
-      reactDesc: 'Développement complet d\'applications et architecture serveur',
-      jsTitle: 'Site vitrine',
-      jsDesc: 'Création de sites vitrines professionnels, modernes et adaptés à tous les écrans',
-      designTitle: 'Graphisme',
-      designDesc: 'Logo vectorisé, création identité visuelle, charte graphique et design commercial'
+      welcome: 'Sites, apps et identités digitales',
+      subtitle: 'Je conçois des expériences web et mobiles claires, performantes et alignées avec votre image de marque.',
+      heroLine: 'Design soigné. Code fiable. Présence maîtrisée.',
+      statWeb: 'outils métier',
+      statMobile: 'expériences fluides',
+      statBrand: 'image premium',
+      viewProjects: 'Découvrir les projets',
+      contactMe: 'Parler de mon projet',
+      reactTitle: 'Applications web',
+      reactDesc: 'Interfaces sur mesure, dashboards, espaces utilisateurs et outils métier pensés pour un usage quotidien.',
+      jsTitle: 'Sites vitrines',
+      jsDesc: 'Sites modernes, rapides et responsives pour présenter une activité avec clarté et crédibilité.',
+      designTitle: 'Identité visuelle',
+      designDesc: 'Logos, supports graphiques et chartes visuelles pour construire une image cohérente et professionnelle.'
     },
     
     // About
     about: {
-      title: 'À propos de moi',
-      whoAmI: 'Qui suis-je ?',
-      whoAmIDesc: 'Je suis Jordann Miso, développeur d\'applications web et web mobile diplômé d\'une formation à Holberton School. Je crée des sites, applications, logos, supports graphiques, designs commerciaux comme des cartes de visite, et chartes graphiques pour construire une identité professionnelle cohérente.',
+      title: 'À propos',
+      whoAmI: 'Profil',
+      whoAmIDesc: 'Je suis Jordann Miso, développeur web et mobile formé à Holberton School. Avec Inked Code, j\'accompagne les indépendants, marques et petites structures dans la création d\'interfaces digitales et d\'identités visuelles professionnelles.',
       journeyTitle: 'Formation',
-      journeyDesc: 'Mon parcours à Holberton School m\'a formé aux bases solides du développement logiciel : logique algorithmique, backend, frontend, bases de données, travail en équipe et construction de projets complets.',
-      workTitle: 'Ce que je fais',
-      workDesc: 'Avec Inked Code, je développe des sites vitrines, applications web et applications mobiles. J\'accompagne aussi la partie visuelle avec logo, graphisme et charte graphique pour livrer une présence digitale cohérente.',
+      journeyDesc: 'Mon parcours m\'a apporté des bases solides en développement logiciel : logique produit, frontend, backend, bases de données et livraison de projets complets.',
+      workTitle: 'Approche',
+      workDesc: 'Je privilégie des solutions lisibles, maintenables et adaptées au besoin réel : un site qui présente clairement, une application qui simplifie le travail, une identité qui reste cohérente partout.',
       skills: 'Compétences',
       frontend: 'Frontend',
       backend: 'Backend',
@@ -159,50 +167,50 @@ export const translations: TranslationsData = {
     // Projects
     services: {
       title: 'Services',
-      subtitle: 'Je conçois des supports digitaux et visuels pour lancer, structurer ou renforcer une présence professionnelle.',
-      websiteTitle: 'Sites web vitrine',
-      websiteDesc: 'Création de sites modernes, responsives et clairs pour présenter une activité, une marque, un portfolio ou une offre.',
+      subtitle: 'Des prestations pensées pour lancer une présence crédible, améliorer un parcours utilisateur ou structurer une image de marque.',
+      websiteTitle: 'Sites vitrines',
+      websiteDesc: 'Création de sites clairs, rapides et responsives pour présenter une activité, une offre ou un portfolio avec impact.',
       webAppTitle: 'Applications web',
-      webAppDesc: 'Développement d\'interfaces web sur mesure avec formulaires, dashboards, espaces utilisateurs ou outils métier.',
+      webAppDesc: 'Développement d\'interfaces sur mesure : formulaires avancés, dashboards, espaces utilisateurs et outils internes.',
       mobileAppTitle: 'Applications mobiles',
-      mobileAppDesc: 'Conception d\'applications mobiles ergonomiques, pensées pour une utilisation simple sur smartphone et tablette.',
+      mobileAppDesc: 'Conception d\'applications mobiles ergonomiques, simples à utiliser et adaptées aux usages sur smartphone.',
       logoTitle: 'Logo',
-      logoDesc: 'Création ou refonte de logo avec une identité reconnaissable, exploitable sur le web, les réseaux et les supports imprimés.',
+      logoDesc: 'Création ou refonte de logo avec une identité nette, reconnaissable et exploitable sur tous les supports.',
       graphicTitle: 'Graphisme',
-      graphicDesc: 'Réalisation de visuels, compositions, supports de communication et éléments graphiques cohérents avec votre univers.',
+      graphicDesc: 'Réalisation de visuels, supports de communication et compositions alignés avec votre univers de marque.',
       brandTitle: 'Charte graphique',
       brandDesc: 'Définition des couleurs, typographies, règles d\'usage et éléments visuels pour garder une image homogène.',
-      ctaTitle: 'Un projet à lancer ?',
-      ctaText: 'Je peux vous accompagner de l\'idée au rendu final, avec une approche claire et adaptée à votre besoin.',
-      ctaButton: 'Demander un devis'
+      ctaTitle: 'Vous avez un projet ?',
+      ctaText: 'Je vous aide à transformer une idée en support digital concret, propre et prêt à être utilisé.',
+      ctaButton: 'Demander un échange'
     },
 
     // Projects
     projects: {
-      title: 'Mes Projets',
+      title: 'Réalisations',
       project1Title: 'Holbies Learning Hub',
-      project1Desc: 'Système de quiz interactif pour l\'apprentissage technique. Développé avec FastAPI et PostgreSQL, il inclut un système de correction IA avancé pour les questions à réponse libre. Interface immersive avec dashboard de performance.',
+      project1Desc: 'Plateforme de quiz pour l\'apprentissage technique, avec correction assistée par IA, suivi des résultats et interface orientée progression.',
       project2Title: 'Mnesya',
-      project2Desc: 'Application mobile de rappel pour les personnes âgées et leurs aidants. Développée avec React Native et FastAPI, elle offre une interface ultra-simple avec gros boutons, notifications intelligentes et système de couplage sécurisé.',
+      project2Desc: 'Application mobile de rappel pensée pour les personnes âgées et leurs aidants, avec une interface simple, des notifications utiles et un couplage sécurisé.',
       project3Title: 'HBnB - Holberton Project',
       project3Desc: 'Application de location d\'hébergements développée dans le cadre du cursus Holberton School. Implémente une application web complète avec API REST, authentification JWT, ORM SQLAlchemy et frontend interactif.',
-      project4Title: 'Dashboard perso',
-      project4Desc: 'Dashboard freelance complet pour gérer clients, devis, projets, factures, comptabilité, maintenance et paramètres société.',
+      project4Title: 'Dashboard freelance',
+      project4Desc: 'Tableau de bord complet pour centraliser clients, devis, projets, factures, comptabilité, maintenance et paramètres d\'entreprise.',
       project5Title: 'Simple Shell',
       project5Desc: 'Interpréteur de commandes Unix développé en C reproduisant les fonctionnalités de /bin/sh. Shell minimal avec exécution de commandes, gestion du PATH, variables d\'environnement et commandes intégrées.',
-      viewProject: 'Voir le projet',
+      viewProject: 'Voir la réalisation',
       github: 'GitHub'
     },
     
     // Contact
     contact: {
-      title: 'Contactez-moi',
-      subtitle: 'Restons en contact',
-      description: 'N\'hésitez pas à me contacter pour discuter de vos projets ou opportunités.',
+      title: 'Contact',
+      subtitle: 'Parlons de votre projet',
+      description: 'Décrivez votre besoin, votre objectif ou l\'idée à concrétiser. Je vous répondrai avec une approche claire et adaptée.',
       name: 'Nom',
       email: 'Email',
       message: 'Message',
-      send: 'Envoyer',
+      send: 'Envoyer le message',
       emailLabel: 'Email',
       linkedinLabel: 'LinkedIn',
       githubLabel: 'GitHub'
@@ -226,27 +234,31 @@ export const translations: TranslationsData = {
     
     // Home
     home: {
-      welcome: 'Web and mobile development',
-      subtitle: 'Digital solutions where custom development and graphic identity work together.',
-      viewProjects: 'View my projects',
-      contactMe: 'Contact me',
-      reactTitle: 'Web and mobile web application',
-      reactDesc: 'Complete application development and server architecture',
-      jsTitle: 'Showcase website',
-      jsDesc: 'Creation of professional, modern showcase websites adapted to every screen',
-      designTitle: 'Graphic Design',
-      designDesc: 'Vector logo, brand guidelines, and commercial design'
+      welcome: 'Websites, apps and digital identities',
+      subtitle: 'I design clear, performant web and mobile experiences aligned with your brand identity.',
+      heroLine: 'Sharp design. Reliable code. Controlled presence.',
+      statWeb: 'business tools',
+      statMobile: 'fluid experiences',
+      statBrand: 'premium image',
+      viewProjects: 'Explore projects',
+      contactMe: 'Discuss a project',
+      reactTitle: 'Web applications',
+      reactDesc: 'Custom interfaces, dashboards, user areas, and business tools designed for daily use.',
+      jsTitle: 'Showcase websites',
+      jsDesc: 'Modern, fast, responsive websites that present your activity with clarity and credibility.',
+      designTitle: 'Visual identity',
+      designDesc: 'Logos, graphic assets, and brand guidelines for a consistent and professional image.'
     },
     
     // About
     about: {
-      title: 'About Me',
-      whoAmI: 'Who am I?',
-      whoAmIDesc: 'I am Jordann Miso, a web and mobile web application developer trained and graduated through Holberton School. I create websites, applications, logos, graphic assets, commercial designs such as business cards, and brand guidelines to build a consistent professional identity.',
+      title: 'About',
+      whoAmI: 'Profile',
+      whoAmIDesc: 'I am Jordann Miso, a web and mobile developer trained at Holberton School. Through Inked Code, I help freelancers, brands, and small businesses build professional digital interfaces and visual identities.',
       journeyTitle: 'Training',
-      journeyDesc: 'My Holberton School background gave me solid foundations in software development: algorithms, backend, frontend, databases, teamwork, and complete project delivery.',
-      workTitle: 'What I do',
-      workDesc: 'With Inked Code, I build showcase websites, web applications, and mobile applications. I also support visual identity work with logos, graphic design, and brand guidelines.',
+      journeyDesc: 'My background gave me solid foundations in software development: product logic, frontend, backend, databases, and complete project delivery.',
+      workTitle: 'Approach',
+      workDesc: 'I focus on clear, maintainable solutions matched to real needs: a website that explains, an app that simplifies work, and an identity that stays consistent everywhere.',
       skills: 'Skills',
       frontend: 'Frontend',
       backend: 'Backend',
@@ -262,50 +274,50 @@ export const translations: TranslationsData = {
     // Services
     services: {
       title: 'Services',
-      subtitle: 'I design digital and visual assets to launch, structure, or strengthen a professional presence.',
+      subtitle: 'Services designed to launch a credible presence, improve a user journey, or structure a brand image.',
       websiteTitle: 'Showcase websites',
-      websiteDesc: 'Modern, responsive, and clear websites for a business, brand, portfolio, or offer.',
+      websiteDesc: 'Clear, fast, responsive websites to present a business, offer, or portfolio with impact.',
       webAppTitle: 'Web applications',
-      webAppDesc: 'Custom web interfaces with forms, dashboards, user areas, or business tools.',
+      webAppDesc: 'Custom interfaces with advanced forms, dashboards, user areas, and internal business tools.',
       mobileAppTitle: 'Mobile applications',
-      mobileAppDesc: 'Ergonomic mobile apps designed for simple use on smartphones and tablets.',
+      mobileAppDesc: 'Ergonomic mobile apps designed for simple, efficient use on smartphones.',
       logoTitle: 'Logo',
-      logoDesc: 'Logo creation or redesign with a recognizable identity for web, social media, and print use.',
+      logoDesc: 'Logo creation or redesign with a sharp, recognizable identity ready for every medium.',
       graphicTitle: 'Graphic design',
-      graphicDesc: 'Visuals, layouts, communication materials, and graphic elements aligned with your identity.',
+      graphicDesc: 'Visual assets, communication materials, and compositions aligned with your brand universe.',
       brandTitle: 'Brand guidelines',
       brandDesc: 'Colors, typography, usage rules, and visual elements to keep a consistent image.',
-      ctaTitle: 'Have a project to launch?',
-      ctaText: 'I can support you from idea to final delivery with a clear approach adapted to your needs.',
-      ctaButton: 'Request a quote'
+      ctaTitle: 'Have a project in mind?',
+      ctaText: 'I help turn an idea into a clean, concrete digital asset ready to use.',
+      ctaButton: 'Start a conversation'
     },
 
     // Projects
     projects: {
-      title: 'My Projects',
+      title: 'Selected Work',
       project1Title: 'Holbies Learning Hub',
-      project1Desc: 'Interactive quiz system for technical learning. Built with FastAPI and PostgreSQL, including an advanced AI correction system for open-ended questions. Immersive interface with performance dashboard.',
+      project1Desc: 'Technical learning quiz platform with AI-assisted correction, result tracking, and a progression-focused interface.',
       project2Title: 'Mnesya',
-      project2Desc: 'Mobile reminder application for elderly people and their caregivers. Built with React Native and FastAPI, featuring an ultra-simple interface with large buttons, smart notifications, and secure pairing system.',
+      project2Desc: 'Mobile reminder app designed for elderly users and caregivers, with a simple interface, useful notifications, and secure pairing.',
       project3Title: 'HBnB - Holberton Project',
       project3Desc: 'Accommodation rental application developed as part of the Holberton School curriculum. Complete web application with REST API, JWT authentication, SQLAlchemy ORM, and interactive frontend.',
-      project4Title: 'Personal Dashboard',
-      project4Desc: 'Complete freelance dashboard to manage clients, quotes, projects, invoices, accounting, maintenance, and company settings.',
+      project4Title: 'Freelance Dashboard',
+      project4Desc: 'Complete dashboard to centralize clients, quotes, projects, invoices, accounting, maintenance, and company settings.',
       project5Title: 'Simple Shell',
       project5Desc: 'Unix command interpreter developed in C replicating /bin/sh functionality. Minimal shell with command execution, PATH management, environment variables, and built-in commands.',
-      viewProject: 'View project',
+      viewProject: 'View case',
       github: 'GitHub'
     },
     
     // Contact
     contact: {
-      title: 'Contact Me',
-      subtitle: 'Keep in touch',
-      description: 'Feel free to contact me to discuss your projects or opportunities.',
+      title: 'Contact',
+      subtitle: 'Let\'s discuss your project',
+      description: 'Share your need, objective, or idea. I will get back to you with a clear and suitable approach.',
       name: 'Name',
       email: 'Email',
       message: 'Message',
-      send: 'Send',
+      send: 'Send message',
       emailLabel: 'Email',
       linkedinLabel: 'LinkedIn',
       githubLabel: 'GitHub'
